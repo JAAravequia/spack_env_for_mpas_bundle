@@ -1,7 +1,8 @@
 # spack_env_for_mpas_bundle
 Spack Environment to mpas-bundle at INPE's EGEON computer cluster
 
-The library environment was built with spack-stack 
+The library environment was built with spack-stack (https://github.com/jcsda/spack-stack.git) .
+
 This was tested with JEDI mpas-bundle https://github.com/JCSDA/mpas-bundle.git release/3.0.0
 
 ### To get the JEDI mpas-bundle: 
