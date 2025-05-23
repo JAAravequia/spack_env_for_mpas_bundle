@@ -34,6 +34,10 @@ module load ecbuild
 module load eigen
 module load py-setuptools
 module load py-pycodestyle
+module load py-pybind11
+module load py-numpy/1.26.4
+module load py-pyyaml/6.0.1
+module load odc/1.5.2
 module load sqlite
 module load openblas
 module load udunits
