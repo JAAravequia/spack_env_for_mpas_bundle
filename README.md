@@ -5,6 +5,8 @@ The library environment was built with spack-stack (https://github.com/jcsda/spa
 
 This was tested with JEDI mpas-bundle https://github.com/JCSDA/mpas-bundle.git release/3.0.0
 
+Note: The spack-stack library for mpas-bundle was rebuilt with mpich library, 
+because the JEDI applications compiled with openmpi-5 library didn't run as expected on multiple nodes. 
 ### To get the JEDI mpas-bundle: 
 
 ```
@@ -19,7 +21,7 @@ cd /mnt/beegfs/$USER
 git clone https://github.com/JAAravequia/spack_env_for_mpas_bundle.git
 mkdir build-jedi && cd build-jedi
 export JEDI_BUILD=`pwd`
-source ../spack_env_for_mpas_bundle/gnu-egeon.sh
+source ../spack_env_for_mpas_bundle/gnu-mpich-egeon.sh
 ecbuild /mnt/beegfs/$USER/mpas-bundle
 make -j8
 export LD_LIBRARY_PATH=${JEDI_BUILD}/lib:${LD_LIBRARY_PATH}
