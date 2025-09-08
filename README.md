@@ -7,6 +7,28 @@ This was tested with JEDI mpas-bundle https://github.com/JCSDA/mpas-bundle.git r
 
 Note: The spack-stack library for mpas-bundle was rebuilt with mpich library, 
 because the JEDI applications compiled with openmpi-5 library didn't run as expected on multiple nodes. 
+
+### Before downloading the JEDI-MPAS code, be sure that the git-lfs is configured:
+
+Verify if you already have git-lfs:
+
+```
+git lfs version
+```
+
+If the ansewer is something like:
+
+```
+git: 'lfs' is not a git command. See 'git --help'.
+```
+
+you need to configure **lfs** in your account with :
+
+```
+git lfs install --skip-repo
+``` 
+
+
 ### To get the JEDI mpas-bundle: 
 
 ```
