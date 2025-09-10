@@ -28,6 +28,11 @@ you need to configure **lfs** in your account with :
 git lfs install --skip-repo
 ``` 
 
+Make sure that the location where **git-lfs** is installed is in your PATH environment: 
+
+```
+echo $PATH
+```
 
 ### To get the JEDI mpas-bundle: 
 
