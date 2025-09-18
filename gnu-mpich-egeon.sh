@@ -42,6 +42,7 @@ module load py-pyyaml/6.0.2
 module load py-h5py/3.12.1
 module load py-netcdf4/1.5.8
 module load py-cdo/1.5.6
+module load py-matplotlib/3.7.4
 module load nco/5.1.6
 module load odc/1.5.2
 module load sqlite
