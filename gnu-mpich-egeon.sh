@@ -43,6 +43,9 @@ module load py-h5py/3.12.1
 module load py-netcdf4/1.5.8
 module load py-cdo/1.5.6
 module load py-matplotlib/3.7.4
+module load py-cartopy/0.24.1
+module load py-pyproj/3.6.0
+export PROJ_LIB=/mnt/beegfs/jose.aravequia/spack-install/mpas-gcc-mpich/gcc/12.2.0/proj-9.4.1-tkvrhpb/share/proj/
 module load nco/5.1.6
 module load odc/1.5.2
 module load sqlite
