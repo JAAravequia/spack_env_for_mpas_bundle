@@ -1,55 +1,53 @@
 # spack_env_for_mpas_bundle
-Spack Environment to mpas-bundle at INPE's EGEON computer cluster
+Spack Environment to mpas-bundle at INPE's JACI supercomputer 
 
 The library environment was built with spack-stack (https://github.com/jcsda/spack-stack.git) .
 
 This was tested with JEDI mpas-bundle https://github.com/JCSDA/mpas-bundle.git release/3.0.0
 
-Note: The spack-stack library for mpas-bundle was rebuilt with mpich library, 
-because the JEDI applications compiled with openmpi-5 library didn't run as expected on multiple nodes. 
+Note: The spack-stack library for mpas-bundle at JACI was built with openmpi-5 library.
+      JEDI applications compiled with openmpi-5 library **were not tested yet** on multiple nodes at JACI. 
 
-### Before downloading the JEDI-MPAS code, be sure that the git-lfs is configured:
-
-Verify if you already have git-lfs:
+### Before compiling mpas-bundle with JEDI-MPAS libraries, run the prep_jaci.sh script to install a few python functions needed to run ctest :
 
 ```
-git lfs version
+git clone https://github.com/JAAravequia/spack_env_for_mpas_bundle.git
+source ./spack_env_for_mpas_bundle/prep_jaci.sh
 ```
 
-If the ansewer is something like:
+### You don't need to checkout all the JEDI mpas-bundle repository. You can copy it using: 
 
 ```
-git: 'lfs' is not a git command. See 'git --help'.
+cp -r /lustre/projetos/satdas/mpas-bundle .
 ```
-
-you need to configure **lfs** in your account with :
-
+### But, if you prefer to get the code from git, please be sure that git-lfs is accessible in your account, them go ahead with
 ```
-git lfs install --skip-repo
-``` 
-
-Make sure that the location where **git-lfs** is installed is in your PATH environment: 
-
-```
-echo $PATH
-```
-
-### To get the JEDI mpas-bundle: 
-
-```
-cd /mnt/beegfs/$USER
 git clone -b release/3.0.0 --recursive https://github.com/JCSDA/mpas-bundle.git
 ```
 
-### To build the code:
+###  Now, you need to load the libraries environment:
+```
+source ./spack_env_for_mpas_bundle/gcc13.3-openmpi.sh
+````
+
+### Prepare to build the code with ecbuild as below:
 
 ```
-cd /mnt/beegfs/$USER
-git clone https://github.com/JAAravequia/spack_env_for_mpas_bundle.git
 mkdir build-jedi && cd build-jedi
 export JEDI_BUILD=`pwd`
-source ../spack_env_for_mpas_bundle/gnu-mpich-egeon.sh
-ecbuild /mnt/beegfs/$USER/mpas-bundle
+ecbuild ../mpas-bundle
+```
+If ecbuild went well you will see at the end something like below:
+``` 
+...
+-- Configuring done (129.7s)
+-- Generating done (8.8s)
+-- Build files have been written to: /your/path/build-jedi
+```
+
+### Now, compile the code
+
+``` 
 make -j8
 export LD_LIBRARY_PATH=${JEDI_BUILD}/lib:${LD_LIBRARY_PATH}
 ```
