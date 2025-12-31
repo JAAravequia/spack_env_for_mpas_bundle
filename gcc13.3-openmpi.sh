@@ -25,7 +25,10 @@ module load gcc-native/13.2
 
 module load git-lfs/3.5.1 git/2.43.0
 
-conda deactivate
+# Deactivate anaconda
+if command -v conda >/dev/null 2>&1; then
+  conda deactivate
+fi
 
 # module load hwloc/2.11.1
 
