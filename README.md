@@ -11,7 +11,7 @@ Note: The spack-stack library for mpas-bundle at JACI was built with openmpi-5 l
 ### Before compiling mpas-bundle with JEDI-MPAS libraries, run the prep_jaci.sh script to install a few python functions needed to run ctest :
 
 ```
-git clone https://github.com/JAAravequia/spack_env_for_mpas_bundle.git
+git clone -b jaci-v1.0.0 https://github.com/JAAravequia/spack_env_for_mpas_bundle.git
 source ./spack_env_for_mpas_bundle/prep_jaci.sh
 ```
 
