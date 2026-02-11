@@ -84,7 +84,7 @@ module load nco
 module load odc/1.5.2
 module load sqlite/3.46.0
 module load udunits
-module load nccmp
+module load nccmp/1.9.0.0
 
 module list
 

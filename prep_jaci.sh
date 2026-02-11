@@ -28,5 +28,6 @@ export PYTHONPATH=${python_ROOT}/lib/python3.11/encodings:${python_ROOT}/lib64/p
 ## install using pip all python libraries needed by ctest (see errors log if any test fails) and others users needs
 ${python_ROOT}/bin/python3 -m pip install --user pyyaml 
 ${python_ROOT}/bin/python3 -m pip install --user netCDF4
+${python_ROOT}/bin/python3 -m pip install --user pycodestyle
 # add more as needed
 
